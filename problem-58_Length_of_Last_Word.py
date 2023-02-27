@@ -39,3 +39,15 @@ class Solution:
 
 
 # Runtime 26 ms Beats 91.74% Memory 14 MB Beats 30.57%
+
+
+class WithoutReSolution:
+    def lengthOfLastWord(self, s: str) -> int:
+        clean_result = [v for v in s.split(" ") if v != ""]
+
+        if clean_result:
+            return len(clean_result[-1])
+        return 0
+
+
+#  Runtime 34 ms Beats 51.11% Memory 13.8 MB Beats 72.55%
