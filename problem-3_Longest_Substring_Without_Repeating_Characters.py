@@ -33,12 +33,10 @@ class Solution:  # TODO: need refactor
 
             for char in s[index:]:
                 if char in current:
-                    current = {char: 1}
-                    count = 1
                     break
-                else:
-                    current[char] = 1
-                    count += 1
+
+                current[char] = 1
+                count += 1
 
                 if count > longest:
                     longest = count
@@ -46,4 +44,4 @@ class Solution:  # TODO: need refactor
         return longest
 
 
-# Runtime 413 ms Beats 15.72% Memory 14.1 MB Beats 43.24%
+# Runtime 404 ms Beats 16.2% Memory 14 MB Beats 89.70% (2nd attempt)
