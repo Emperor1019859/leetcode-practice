@@ -37,18 +37,11 @@ boxes[i] is either '0' or '1'.
 
 class Solution:
     def minOperations(self, boxes: str) -> list[int]:
-        original_boxes = [int(v) for v in boxes]
+        ball_idxes = [idx for idx, value in enumerate(boxes) if value == "1"]
         result = []
 
-        for i in range(len(original_boxes)):
-            count = 0
-
-            for idx, value in enumerate(original_boxes):
-                if i == idx:
-                    continue
-
-                count += abs(idx - i) if value else 0
-
+        for idx in range(len(boxes)):
+            count = sum([abs(ball_idx - idx) for ball_idx in ball_idxes])
             result.append(count)
 
         return result
@@ -58,5 +51,5 @@ boxes = "001011"
 answer = Solution().minOperations(boxes)
 print(answer)  # [11, 8, 5, 4, 3, 4]
 
-# Runtime 3302 ms Beats 12.92% of users with Python3
-# Memory 16.95 MB Beats 53.17% of users with Python3
+# Runtime 1047 ms Beats 59.18% of users with Python3
+# Memory 16.98 MB Beats 53.17% of users with Python3
