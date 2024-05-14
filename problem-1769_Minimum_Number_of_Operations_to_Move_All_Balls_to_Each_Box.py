@@ -41,7 +41,7 @@ class Solution:
         result = []
 
         for idx in range(len(boxes)):
-            count = sum([abs(ball_idx - idx) for ball_idx in ball_idxes])
+            count = sum((abs(ball_idx - idx) for ball_idx in ball_idxes))
             result.append(count)
 
         return result
@@ -52,4 +52,4 @@ answer = Solution().minOperations(boxes)
 print(answer)  # [11, 8, 5, 4, 3, 4]
 
 # Runtime 1047 ms Beats 59.18% of users with Python3
-# Memory 16.98 MB Beats 53.17% of users with Python3
+# Memory 16.89 MB Beats 90.36% of users with Python3
