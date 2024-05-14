@@ -37,17 +37,17 @@ boxes[i] is either '0' or '1'.
 
 class Solution:
     def minOperations(self, boxes: str) -> list[int]:
-        original_boxes = list(boxes)
+        original_boxes = [int(v) for v in boxes]
         result = []
 
-        for i, _ in enumerate(original_boxes):
+        for i in range(len(original_boxes)):
             count = 0
 
             for idx, value in enumerate(original_boxes):
                 if i == idx:
                     continue
 
-                count += abs(idx - i) if int(value) else 0
+                count += abs(idx - i) if value else 0
 
             result.append(count)
 
@@ -58,5 +58,5 @@ boxes = "001011"
 answer = Solution().minOperations(boxes)
 print(answer)  # [11, 8, 5, 4, 3, 4]
 
-# Runtime 6024 ms Beats 5.09% of users with Python3
-# Memory 17.00 MB Beats 17.35% of users with Python3
+# Runtime 3302 ms Beats 12.92% of users with Python3
+# Memory 16.95 MB Beats 53.17% of users with Python3
