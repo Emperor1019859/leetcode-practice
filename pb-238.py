@@ -42,12 +42,12 @@ class Solution:
                 p_v = reduce(operator.mul, nums)
                 nums[idx] = temp
             else:
-                p_v = int(total_product_v / value) if value else 0
+                p_v = total_product_v // value if value else 0
 
             result.append(p_v)
 
         return result
 
 
-# Runtime 266 ms Beats 66.57%
+# Runtime 264 ms Beats 72.94%
 # Memory 25.78 MB Beats 49.14%
